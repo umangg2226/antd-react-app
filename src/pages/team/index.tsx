@@ -9,6 +9,7 @@ import {
   SearchInput,
   CustomDropdown,
   CenterContent,
+  FloatingCallButton,
 } from '../../components'
 
 const { useToken } = theme
@@ -160,6 +161,7 @@ const Team = () => {
         setSortBy={handleSortByChange}
       />
       <UserListing users={filteredUsers} toggleStar={toggleStar} />
+      <FloatingCallButton />
     </>
   )
 }

@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useState } from 'react'
+import React, { ReactNode, useEffect, useState, useMemo } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import {
   DesktopOutlined,
@@ -19,6 +19,7 @@ import {
 import { Layout, Menu, Button, Badge, Avatar, Typography } from 'antd'
 import { useDarkMode, useDrawer } from '../../context'
 import { theme } from 'antd'
+import useMediaQuery from 'use-media-antd-query'
 
 const { useToken } = theme
 
@@ -87,6 +88,8 @@ export const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
   const { isDrawerOpen, toggleDrawer } = useDrawer()
   const location = useLocation()
 
+  const colSize = useMediaQuery()
+
   useEffect(() => {
     const pathName = location.pathname
 
@@ -98,6 +101,10 @@ export const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
     document.title = `ASTPP | ${name}`
   }, [location.pathname])
 
+  const isMobile = useMemo(() => {
+    return ['sm', 'xs'].includes(colSize)
+  }, [colSize])
+
   return (
     <Layout style={{ height: '100vh' }}>
       <Sider
@@ -106,6 +113,8 @@ export const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
         style={{ backgroundColor: token.colorPrimaryBg }}
         trigger={null}
         collapsible
+        collapsedWidth={isMobile ? 0 : 80}
+        width={isMobile ? 160 : 220}
       >
         <div>
           <img src='./ASTPP.png' alt='App Logo' className='logo' />

@@ -9,6 +9,7 @@ const lightTheme: ThemeConfig = {
   algorithm: theme.defaultAlgorithm,
   token: {
     colorPrimaryBg: primaryColorLight,
+    colorPrimary: primaryColorLight,
   },
   components: {
     Typography: {
@@ -50,6 +51,7 @@ const darkTheme: ThemeConfig = {
   algorithm: theme.darkAlgorithm,
   token: {
     colorPrimaryBg: primaryColorDark,
+    colorPrimary: '#666',
   },
   components: {
     Menu: {

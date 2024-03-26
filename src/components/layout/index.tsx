@@ -20,6 +20,7 @@ import { Layout, Menu, Button, Badge, Avatar, Typography } from 'antd'
 import { useDarkMode, useDrawer } from '../../context'
 import { theme } from 'antd'
 import useMediaQuery from 'use-media-antd-query'
+import { useKeyboardShortcut } from '../../utils'
 
 const { useToken } = theme
 
@@ -89,6 +90,8 @@ export const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
   const location = useLocation()
 
   const colSize = useMediaQuery()
+
+  useKeyboardShortcut('b', toggleDrawer)
 
   useEffect(() => {
     const pathName = location.pathname

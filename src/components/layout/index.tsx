@@ -104,6 +104,19 @@ export const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
     document.title = `ASTPP | ${name}`
   }, [location.pathname])
 
+  useEffect(() => {
+    const primaryBgColor = darkMode ? '#333' : '#fff'
+
+    const metaTags = document.querySelectorAll(
+      'meta[name="msapplication-navbutton-color"], meta[name="apple-mobile-web-app-status-bar-style"], meta[name="theme-color"]'
+    )
+
+    metaTags &&
+      metaTags.forEach((tag) => {
+        tag.setAttribute('content', primaryBgColor)
+      })
+  }, [darkMode])
+
   const isMobile = useMemo(() => {
     return ['sm', 'xs'].includes(colSize)
   }, [colSize])

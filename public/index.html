@@ -15,6 +15,10 @@
     user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
   -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <meta name="msapplication-navbutton-color" content="#fff" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#fff" />
+    <meta name="theme-color" content="#fff" />
     <!--
     Notice the use of %PUBLIC_URL% in the tags above.
     It will be replaced with the URL of the `public` folder during the build.
@@ -103,6 +107,15 @@
         '--secondary-border-color',
         secondaryBorderColor
       )
+
+      const metaTags = document.querySelectorAll(
+        'meta[name="msapplication-navbutton-color"], meta[name="apple-mobile-web-app-status-bar-style"], meta[name="theme-color"]'
+      )
+
+      metaTags &&
+        metaTags.forEach((tag) => {
+          tag.setAttribute('content', primaryBgColor)
+        })
     </script>
   </head>
   <body>

@@ -1,48 +1,57 @@
 import { theme, ThemeConfig } from 'antd'
 
-const bgColor = 'rgba(255, 255, 255, 0.1)'
-const textColor = 'rgba(255, 255, 255, 0.7)'
-const primaryColorLight = '#322B6A'
-const primaryColorDark = '#333'
+const lightBackgroundColor = 'rgba(255, 255, 255, 0.1)'
+const lightTextColor = 'rgba(255, 255, 255, 0.7)'
+const darkPrimaryColor = '#333'
+const lightPrimaryColor = '#322B6A'
+const bodyBgColorLight = '#F8F8F9'
+const bodyBgColorDark = '#444'
+const headerBgColorLight = '#fff'
+const headerBgColorDark = '#333'
+const fontFamily = 'Montserrat, sans-serif'
+const borderRadius = 8
+const headerHeight = 50
+const headerPadding = '0px 24px 0px 0px'
+const cardPadding = 10
 
 const lightTheme: ThemeConfig = {
   algorithm: theme.defaultAlgorithm,
   token: {
-    colorPrimaryBg: primaryColorLight,
-    colorPrimary: primaryColorLight,
+    colorPrimaryBg: lightPrimaryColor,
+    colorPrimary: lightPrimaryColor,
   },
   components: {
     Typography: {
-      fontFamily: 'Montserrat, sans-serif',
+      fontFamily: fontFamily,
     },
     Menu: {
       algorithm: true,
-      itemSelectedBg: bgColor,
-      itemSelectedColor: textColor,
-      itemActiveBg: bgColor,
-      itemColor: textColor,
-      itemHoverBg: bgColor,
-      itemHoverColor: textColor,
-      borderRadius: 8,
-      fontFamily: 'Montserrat, sans-serif',
+      itemSelectedBg: lightBackgroundColor,
+      itemSelectedColor: lightTextColor,
+      itemActiveBg: lightBackgroundColor,
+      itemColor: lightTextColor,
+      itemHoverBg: lightBackgroundColor,
+      itemHoverColor: lightTextColor,
+      borderRadius: borderRadius,
+      fontFamily: fontFamily,
     },
     Layout: {
-      bodyBg: '#F8F8F9',
-      headerBg: '#fff',
-      headerHeight: 50,
-      headerPadding: '0px 24px 0px 0px',
-      fontFamily: 'Montserrat, sans-serif',
+      bodyBg: bodyBgColorLight,
+      headerBg: headerBgColorLight,
+      headerHeight: headerHeight,
+      headerPadding: headerPadding,
+      fontFamily: fontFamily,
     },
     Button: {
       algorithm: true,
-      fontFamily: 'Montserrat, sans-serif',
+      fontFamily: fontFamily,
     },
     Card: {
-      padding: 10,
-      fontFamily: 'Montserrat, sans-serif',
+      padding: cardPadding,
+      fontFamily: fontFamily,
     },
     Spin: {
-      colorPrimary: primaryColorLight,
+      colorPrimary: lightPrimaryColor,
     },
   },
 }
@@ -50,38 +59,38 @@ const lightTheme: ThemeConfig = {
 const darkTheme: ThemeConfig = {
   algorithm: theme.darkAlgorithm,
   token: {
-    colorPrimaryBg: primaryColorDark,
+    colorPrimaryBg: darkPrimaryColor,
     colorPrimary: '#666',
   },
   components: {
     Menu: {
       algorithm: true,
-      itemSelectedBg: bgColor,
-      itemSelectedColor: textColor,
-      itemActiveBg: bgColor,
-      itemColor: textColor,
-      itemHoverBg: bgColor,
-      itemHoverColor: textColor,
-      borderRadius: 8,
+      itemSelectedBg: lightBackgroundColor,
+      itemSelectedColor: lightTextColor,
+      itemActiveBg: lightBackgroundColor,
+      itemColor: lightTextColor,
+      itemHoverBg: lightBackgroundColor,
+      itemHoverColor: lightTextColor,
+      borderRadius: borderRadius,
     },
     Layout: {
-      bodyBg: '#444',
-      headerBg: '#333',
-      headerHeight: 50,
-      headerPadding: '0px 24px 0px 0px',
+      bodyBg: bodyBgColorDark,
+      headerBg: headerBgColorDark,
+      headerHeight: headerHeight,
+      headerPadding: headerPadding,
     },
     Button: {
       algorithm: theme.darkAlgorithm,
     },
     Card: {
-      colorBgContainer: '#333',
-      padding: 10,
+      colorBgContainer: darkPrimaryColor,
+      padding: cardPadding,
     },
     Spin: {
       colorPrimary: '#fff',
     },
     Input: {
-      colorBgContainer: '#444',
+      colorBgContainer: bodyBgColorDark,
     },
   },
 }

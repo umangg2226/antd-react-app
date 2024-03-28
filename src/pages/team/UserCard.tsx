@@ -56,7 +56,7 @@ const UserCard: React.FC<UserCardProps> = ({
     <Meta
       avatar={
         <Space size={40}>
-          <Badge dot status={isOnline ? 'success' : 'error'}>
+          <Badge dot status={isOnline ? 'success' : 'error'} offset={[-2, 30]}>
             <Avatar shape='circle' src={avatar} />
           </Badge>
         </Space>

@@ -197,7 +197,7 @@ export const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
             />
 
             <Button shape='circle' type='text' style={{ padding: 0 }}>
-              <Badge dot status='success'>
+              <Badge dot status='success' offset={[-2, 20]}>
                 <Avatar
                   shape='circle'
                   src='https://robohash.org/Edwina.png?set=set4'
